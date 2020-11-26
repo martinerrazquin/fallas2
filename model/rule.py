@@ -1,4 +1,4 @@
-import vardict as mv
+import model.vardict as mv
 
 class Rule:
 

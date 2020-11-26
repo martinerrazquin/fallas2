@@ -1,4 +1,4 @@
-import rule as mr, vardict as mv
+import model.rule as mr, model.vardict as mv
 
 class Engine:
     def __init__(self,base_vars,target_var):
@@ -39,7 +39,7 @@ class Engine:
 
         return t
 
-    def get_next_attr(self):
+    def get_next_var(self):
         # solo considero aquellas reglas que se completan con variables base
         weighted_list = [(rule, rule.lacking()) for rule in self.applicable_rules
                             if rule.lacking() <= self.base_vars]
@@ -50,14 +50,27 @@ class Engine:
         return lacking_vars.pop()
 
     def recommend(self):
-    # TODO: agregar una recomendacion cuando target_var no esta definida
-        return self.model[target_var]
+        # TODO: agregar una recomendacion cuando target_var no esta definida
+        return self.model[self.target_var]
+
+    def reset(self):
+        # reset rules
+        self.applicable_rules = self.applicable_rules + self.applied_rules + self.discarded_rules
+        self.discarded_rules = []
+        self.applied_rules = []
+
+        # reset model
+        self.model = {}
+
+        # reset rules' model
+        for rule in self.applicable_rules:
+            rule.model = self.model
 
 # testing
 if __name__ == '__main__':
     def f(x,y):
         print(e.step(x,y))
-        print('Proximo:',e.get_next_attr())
+        print('Proximo:',e.get_next_var())
         print('disp:',len(e.applicable_rules),', ok:',len(e.applied_rules),
         ', no:',len(e.discarded_rules))
     e = Engine(['a','b','c','d'],'m')

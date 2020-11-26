@@ -21,7 +21,7 @@ pipenv install
 Para levantar el server:
 
 ```
-pipenv run start
+pipenv run app
 ```
 
 ## Modelo

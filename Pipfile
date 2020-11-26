@@ -13,4 +13,4 @@ flask-cors = "*"
 python_version = "3.8"
 
 [scripts]
-start = "flask run"
+app = "python app.py"
