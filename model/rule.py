@@ -1,8 +1,9 @@
 import model.vardict as mv
 
+
 class Rule:
 
-    def __init__(self,p_dict,q_dict,model):
+    def __init__(self, p_dict, q_dict, model):
         self.p = mv.VarDict(p_dict)
         self.q = mv.VarDict(q_dict)
         self.model = model
