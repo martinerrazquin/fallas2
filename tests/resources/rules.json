@@ -1,0 +1,41 @@
+{"base_vars": ["a","b","c"],
+  "target_vars": ["x"],
+  "rules": {
+    "rule1": {
+      "given": {
+        "b": 2,
+        "c": 3
+      },
+      "then": {
+        "y": 4
+      }
+    },
+    "rule2": {
+      "given": {
+        "y": 4,
+        "a": 1
+      },
+      "then": {
+        "x": "hola"
+      }
+    },
+    "rule3": {
+      "given": {
+        "a": -1,
+        "b": -1,
+        "c": -1
+      },
+      "then": {
+        "y": -1
+      }
+    },
+    "rule4": {
+      "given": {
+        "y": -1
+      },
+      "then": {
+        "x": "chau"
+      }
+    }
+  }
+}
