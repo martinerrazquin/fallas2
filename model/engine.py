@@ -10,13 +10,13 @@ class Engine:
         self.base_vars = set(base_vars)
         self.model = {}
 
-    def add_rule(self, p_dict, q_dict):
+    def add_rule(self, p_dict, q_dict,ops):
         # TODO: agregar un Dict: var_name -> Set() de posibles valores para cada mapeo?
-        contradictions = any(filter(lambda rule: (rule.p.to_dict() == p_dict) and (rule.q != q_dict), self.applicable_rules))
-        if contradictions:
-            raise ValueError("Contradicting rules provided")
+        #contradictions = any(filter(lambda rule: (rule.p.to_dict() == p_dict) and (rule.q != q_dict), self.applicable_rules))
+        #if contradictions:
+        #    raise ValueError("Contradicting rules provided")
 
-        self.applicable_rules.append(mr.Rule(p_dict, q_dict, self.model))
+        self.applicable_rules.append(mr.Rule(p_dict, q_dict, ops, self.model))
 
     def step(self, new_var_name, new_var_value):
         if new_var_name in self.model:
@@ -88,12 +88,12 @@ if __name__ == '__main__':
 
 
     e = Engine(['a', 'b', 'c', 'd'], 'm')
-    e.add_rule({'a': 1, 'b': 2}, {'u': 3})
-    e.add_rule({'a': 1, 'u': 2}, {'v': 7})
-    e.add_rule({'a': 1, 'u': 3, 'c': 3}, {'v': 9})
-    e.add_rule({'a': 1, 'd': 4}, {'w': 10})
-    e.add_rule({'v': 9, 'w': 10}, {'m': 999})
-    e.add_rule({'v': 9, 'y': 16}, {'m': 0})
+    e.add_rule({'a': 1, 'b': 2}, {'u': 3}, {'a':'eq','b':'eq'})
+    e.add_rule({'a': 1, 'u': 2}, {'v': 7}, {'a': 'eq', 'u': 'eq'})
+    e.add_rule({'a': 1, 'u': 3, 'c': 3}, {'v': 9},{'a': 'eq', 'u': 'eq', 'c': 'eq'})
+    e.add_rule({'a': 1, 'd': 4}, {'w': 10},{'a': 'eq', 'd': 'eq'})
+    e.add_rule({'v': 9, 'w': 10}, {'m': 999},{'v': 'eq', 'w': 'eq'})
+    e.add_rule({'v': 9, 'y': 16}, {'m': 0},{'v': 'eq', 'y': 'eq'})
     f('a', 1)
     f('b', 2)
     f('c', 3)

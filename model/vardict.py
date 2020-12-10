@@ -8,19 +8,21 @@ class VarDict:
     def __init__(self, name_value_mapping):
         self.d = name_value_mapping
 
-    def match(self, context):
+    def match(self, context, ops):
         """Compara contra el contexto (base de conocimientos) brindado y devuelve
         alguna una de las constantes de clase:
         YES, si todos los mapeos coinciden
         NO, si algun mapeo no coincide
-        UNKNOWN, si algun mapeo no existe pero los existentes coinciden (faltan datos)."""
+        UNKNOWN, si algun mapeo no existe pero los existentes coinciden (faltan datos).
+        Ops es un dict de la forma variable -> operacion de comparacion."""
 
         all_mappings_exist = YES
+        assert(len(ops)==len(self.d))
         for var_name, expected_value in self.d.items():
             true_value = context.get(var_name, None)
             if true_value is None:
                 all_mappings_exist = UNKNOWN
-            elif true_value != expected_value:
+            elif not ops[var_name](true_value,expected_value):
                 return NO
 
         return all_mappings_exist

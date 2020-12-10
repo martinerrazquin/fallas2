@@ -1,0 +1,8 @@
+{
+  "mes": [1,2,3,4,5,6,7,8,9,10,11,12],
+  "sustentabilidad deseada": ["baja","media","alta"],
+  "ultimo cultivo": ["soja", "girasol","trigo", "sorgo", "maiz","avena", "cebada"],
+  "regimen de lluvia": ["bajo","medio","alto"],
+  "capacidad de inversion": ["baja","media","alta"],
+  "tipo de explotacion": ["agricola", "ganadera", "mixta"]
+}

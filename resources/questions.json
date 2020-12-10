@@ -1,0 +1,8 @@
+{
+  "mes": "¿en qué mes del año se planea sembrar?[1-12]",
+  "sustentabilidad deseada": "¿qué tan alta es la relevancia de la sustentabilidad de su lote?[baja-media-alta]",
+  "ultimo cultivo": "¿cual fue el ultimo cultivo realizado en el lote?[soja, girasol,trigo, sorgo, maiz,avena, cebada]",
+  "regimen de lluvia": "¿qué tan fuerte es el régimen de lluvia?[bajo-medio-alto]",
+  "capacidad de inversion": "¿qué tan alta es su capacidad de inversión?[baja-media-alta]",
+  "tipo de explotacion": "¿qué tipo de explotación realiza?[agricola, ganadera, mixta]",
+}

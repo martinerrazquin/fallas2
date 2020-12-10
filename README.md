@@ -40,7 +40,8 @@ que especifica.
 
 ### Regla
 
-Una *regla* es una proposición de la forma *p -> q* donde *p, q* son *VarDict*'s.
+Una *regla* es una proposición de la forma *p -> q* donde *p, q* son *VarDict*'s,
+más una lista de operaciones para comparar los valores de *p* contra el contexto.
 
 
 ### Motor

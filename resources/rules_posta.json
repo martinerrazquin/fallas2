@@ -1,0 +1,727 @@
+{
+  "base_vars": ["mes","sustentabilidad deseada","ultimo cultivo","regimen de lluvia","capacidad de inversion","tipo de explotacion"],
+  "target_var": "tipo de cultivo",
+  "rules":{
+    "r1":{
+      "given":{
+        "sustentabilidad deseada":"alta"
+      },
+      "ops":{
+        "sustentabilidad deseada": "eq"
+      },
+      "then":{
+        "sustentabilidad requerida": "alta"
+      }
+    },
+    "r2":{
+      "given":{
+        "sustentabilidad deseada":"baja"
+      },
+      "ops":{
+        "sustentabilidad deseada": "eq"
+      },
+      "then":{
+        "sustentabilidad requerida": "baja"
+      }
+    },
+    "r3a":{
+      "given":{
+        "sustentabilidad deseada":"media",
+        "ultimo cultivo": "soja"
+      },
+      "ops":{
+        "sustentabilidad deseada": "eq",
+        "ultimo cultivo": "eq"
+      },
+      "then":{
+        "sustentabilidad requerida": "alta"
+      }
+    },
+    "r3b":{
+      "given":{
+        "sustentabilidad deseada":"media",
+        "ultimo cultivo": "girasol"
+      },
+      "ops":{
+        "sustentabilidad deseada": "eq",
+        "ultimo cultivo": "eq"
+      },
+      "then":{
+        "sustentabilidad requerida": "alta"
+      }
+    },
+    "r4a":{
+      "given":{
+        "sustentabilidad deseada":"media",
+        "ultimo cultivo": "trigo"
+      },
+      "ops":{
+        "sustentabilidad deseada": "eq",
+        "ultimo cultivo": "eq"
+      },
+      "then":{
+        "sustentabilidad requerida": "baja"
+      }
+    },
+    "r4b":{
+      "given":{
+        "sustentabilidad deseada":"media",
+        "ultimo cultivo": "sorgo"
+      },
+      "ops":{
+        "sustentabilidad deseada": "eq",
+        "ultimo cultivo": "eq"
+      },
+      "then":{
+        "sustentabilidad requerida": "baja"
+      }
+    },
+    "r4c":{
+      "given":{
+        "sustentabilidad deseada":"media",
+        "ultimo cultivo": "maiz"
+      },
+      "ops":{
+        "sustentabilidad deseada": "eq",
+        "ultimo cultivo": "eq"
+      },
+      "then":{
+        "sustentabilidad requerida": "baja"
+      }
+    },
+    "r5a":{
+      "given":{
+        "sustentabilidad deseada":"media",
+        "ultimo cultivo": "avena"
+      },
+      "ops":{
+        "sustentabilidad deseada": "eq",
+        "ultimo cultivo": "eq"
+      },
+      "then":{
+        "sustentabilidad requerida": "media"
+      }
+    },
+    "r5b":{
+      "given":{
+        "sustentabilidad deseada":"media",
+        "ultimo cultivo":"cebada"
+      },
+      "ops":{
+        "sustentabilidad deseada": "eq",
+        "ultimo cultivo": "eq"
+      },
+      "then":{
+        "sustentabilidad requerida": "media"
+      }
+    },
+    "r6":{
+      "given":{
+        "regimen de lluvia":"bajo",
+        "mes": 9
+      },
+      "ops":{
+        "regimen de lluvia": "eq",
+        "mes": "leq"
+      },
+      "then":{
+        "resiliencia buscada": "alta"
+      }
+    },
+    "r7a":{
+      "given":{
+        "regimen de lluvia":"bajo",
+        "mes": 9
+      },
+      "ops":{
+        "regimen de lluvia": "eq",
+        "mes": "gt"
+      },
+      "then":{
+        "resiliencia buscada": "media"
+      }
+    },
+    "r7b":{
+      "given":{
+        "regimen de lluvia":"alto",
+        "mes": 9
+      },
+      "ops":{
+        "regimen de lluvia": "eq",
+        "mes": "leq"
+      },
+      "then":{
+        "resiliencia buscada": "media"
+      }
+    },
+    "r7c":{
+      "given":{
+        "regimen de lluvia":"medio"
+      },
+      "ops":{
+        "regimen de lluvia": "eq",
+      },
+      "then":{
+        "resiliencia buscada": "media"
+      }
+    },
+    "r8":{
+      "given":{
+        "regimen de lluvia":"alto",
+        "mes": 9
+      },
+      "ops":{
+        "regimen de lluvia": "eq",
+        "mes": "gt"
+      },
+      "then":{
+        "resiliencia buscada": "baja"
+      }
+    },
+    "r9a":{
+      "given":{
+        "capacidad de inversion":"baja",
+        "mes": 4,
+        "resiliencia buscada": "baja"
+      },
+      "ops":{
+        "capacidad de inversion":"eq",
+        "mes": "leq",
+        "resiliencia buscada": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "avena"
+      }
+    },
+    "r9b":{
+      "given":{
+        "capacidad de inversion":"baja",
+        "mes": 4,
+        "resiliencia buscada": "media"
+      },
+      "ops":{
+        "capacidad de inversion":"eq",
+        "mes": "leq",
+        "resiliencia buscada": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "avena"
+      }
+    },
+    "r10":{
+      "given":{
+        "capacidad de inversion":"baja",
+        "mes": 4,
+        "resiliencia buscada": "alta"
+      },
+      "ops":{
+        "capacidad de inversion":"eq",
+        "mes": "leq",
+        "resiliencia buscada": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "cebada"
+      }
+    },
+    "r11":{
+      "given":{
+        "capacidad de inversion":"baja",
+        "mes": 4,
+      },
+      "ops":{
+        "capacidad de inversion":"eq",
+        "mes": "gt",
+      },
+      "then":{
+        "tipo de cultivo": "sorgo"
+      }
+    },
+    "r12aaa":{
+      "given":{
+        "mes": 4,
+        "capacidad de inversion": "media",
+        "sustentabilidad requerida": "media",
+        "tipo de explotacion": "agricola"
+      },
+      "ops":{
+        "mes": "leq",
+        "capacidad de inversion": "eq",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "trigo"
+      }
+    },
+    "r12baa":{
+      "given":{
+        "mes": 4,
+        "capacidad de inversion": "alta",
+        "sustentabilidad requerida": "media",
+        "tipo de explotacion": "agricola"
+      },
+      "ops":{
+        "mes": "leq",
+        "capacidad de inversion": "eq",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "trigo"
+      }
+    },
+    "r12aba":{
+      "given":{
+        "mes": 4,
+        "capacidad de inversion": "media",
+        "sustentabilidad requerida": "alta",
+        "tipo de explotacion": "agricola"
+      },
+      "ops":{
+        "mes": "leq",
+        "capacidad de inversion": "eq",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "trigo"
+      }
+    },
+    "r12aab":{
+      "given":{
+        "mes": 4,
+        "capacidad de inversion": "media",
+        "sustentabilidad requerida": "media",
+        "tipo de explotacion": "mixta"
+      },
+      "ops":{
+        "mes": "leq",
+        "capacidad de inversion": "eq",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "trigo"
+      }
+    },
+    "r12bba":{
+      "given":{
+        "mes": 4,
+        "capacidad de inversion": "alta",
+        "sustentabilidad requerida": "alta",
+        "tipo de explotacion": "agricola"
+      },
+      "ops":{
+        "mes": "leq",
+        "capacidad de inversion": "eq",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "trigo"
+      }
+    },
+    "r12abb":{
+      "given":{
+        "mes": 4,
+        "capacidad de inversion": "media",
+        "sustentabilidad requerida": "alta",
+        "tipo de explotacion": "mixta"
+      },
+      "ops":{
+        "mes": "leq",
+        "capacidad de inversion": "eq",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "trigo"
+      }
+    },
+    "r12bab":{
+      "given":{
+        "mes": 4,
+        "capacidad de inversion": "alta",
+        "sustentabilidad requerida": "media",
+        "tipo de explotacion": "mixta"
+      },
+      "ops":{
+        "mes": "leq",
+        "capacidad de inversion": "eq",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "trigo"
+      }
+    },
+    "r12bbb":{
+      "given":{
+        "mes": 4,
+        "capacidad de inversion": "alta",
+        "sustentabilidad requerida": "alta",
+        "tipo de explotacion": "mixta"
+      },
+      "ops":{
+        "mes": "leq",
+        "capacidad de inversion": "eq",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "trigo"
+      }
+    },
+    "r13a":{
+      "given":{
+        "mes": 4,
+        "capacidad de inversion": "media",
+        "tipo de explotacion": "ganadera"
+      },
+      "ops":{
+        "mes": "leq",
+        "capacidad de inversion": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "avena"
+      }
+    },
+    "r13b":{
+      "given":{
+        "mes": 4,
+        "capacidad de inversion": "alta",
+        "tipo de explotacion": "ganadera"
+      },
+      "ops":{
+        "mes": "leq",
+        "capacidad de inversion": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "avena"
+      }
+    },
+    "r14aa":{
+      "given":{
+        "mes": 4,
+        "capacidad de inversion": "media",
+        "sustentabilidad requerida": "baja",
+        "tipo de explotacion": "agricola"
+      },
+      "ops":{
+        "mes": "leq",
+        "capacidad de inversion": "eq",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "cebada"
+      }
+    },
+    "r14ab":{
+      "given":{
+        "mes": 4,
+        "capacidad de inversion": "media",
+        "sustentabilidad requerida": "baja",
+        "tipo de explotacion": "mixta"
+      },
+      "ops":{
+        "mes": "leq",
+        "capacidad de inversion": "eq",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "cebada"
+      }
+    },
+    "r14ba":{
+      "given":{
+        "mes": 4,
+        "capacidad de inversion": "alta",
+        "sustentabilidad requerida": "baja",
+        "tipo de explotacion": "agricola"
+      },
+      "ops":{
+        "mes": "leq",
+        "capacidad de inversion": "eq",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "cebada"
+      }
+    },
+    "r14bb":{
+      "given":{
+        "mes": 4,
+        "capacidad de inversion": "alta",
+        "sustentabilidad requerida": "baja",
+        "tipo de explotacion": "mixta"
+      },
+      "ops":{
+        "mes": "leq",
+        "capacidad de inversion": "eq",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "cebada"
+      }
+    },
+    "r15":{
+      "given":{
+        "capacidad de inversion": "media",
+        "mes": 4,
+        "tipo de explotacion": "ganadera"
+      },
+      "ops":{
+        "capacidad de inversion": "eq",
+        "mes": "gt",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "sorgo"
+      }
+    },
+    "r16":{
+      "given":{
+        "capacidad de inversion": "media",
+        "mes": 4,
+        "tipo de explotacion": "agricola"
+      },
+      "ops":{
+        "capacidad de inversion": "eq",
+        "mes": "gt",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "girasol"
+      }
+    },
+    "r17":{
+      "given":{
+        "capacidad de inversion": "media",
+        "mes": 4,
+        "tipo de explotacion": "mixta",
+        "sustentabilidad requerida": "alta",
+        "resiliencia buscada": "baja"
+      },
+      "ops":{
+        "capacidad de inversion": "eq",
+        "mes": "gt",
+        "tipo de explotacion": "eq",
+        "sustentabilidad requerida": "eq",
+        "resiliencia buscada": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "sorgo"
+      }
+    },
+    "r18aa":{
+      "given":{
+        "capacidad de inversion": "media",
+        "mes": 4,
+        "tipo de explotacion": "mixta",
+        "sustentabilidad requerida": "baja",
+      },
+      "ops":{
+        "capacidad de inversion": "eq",
+        "mes": "gt",
+        "tipo de explotacion": "eq",
+        "sustentabilidad requerida": "eq",
+      },
+      "then":{
+        "tipo de cultivo": "girasol"
+      }
+    },
+    "r18ba":{
+      "given":{
+        "capacidad de inversion": "media",
+        "mes": 4,
+        "tipo de explotacion": "mixta",
+        "sustentabilidad requerida": "media",
+      },
+      "ops":{
+        "capacidad de inversion": "eq",
+        "mes": "gt",
+        "tipo de explotacion": "eq",
+        "sustentabilidad requerida": "eq",
+      },
+      "then":{
+        "tipo de cultivo": "girasol"
+      }
+    },
+    "r18ab":{
+      "given":{
+        "capacidad de inversion": "media",
+        "mes": 4,
+        "tipo de explotacion": "mixta",
+        "resiliencia buscada": "media",
+      },
+      "ops":{
+        "capacidad de inversion": "eq",
+        "mes": "gt",
+        "tipo de explotacion": "eq",
+        "resiliencia buscada": "eq",
+      },
+      "then":{
+        "tipo de cultivo": "girasol"
+      }
+    },
+    "r18ab":{
+      "given":{
+        "capacidad de inversion": "media",
+        "mes": 4,
+        "tipo de explotacion": "mixta",
+        "resiliencia buscada": "alta",
+      },
+      "ops":{
+        "capacidad de inversion": "eq",
+        "mes": "gt",
+        "tipo de explotacion": "eq",
+        "resiliencia buscada": "eq",
+      },
+      "then":{
+        "tipo de cultivo": "girasol"
+      }
+    },
+    "r19a":{
+      "given":{
+        "capacidad de inversion":"alta",
+        "mes": 4,
+        "sustentabilidad requerida": "baja",
+        "tipo de explotacion": "agricola"
+      },
+      "ops":{
+        "capacidad de inversion": "eq",
+        "mes": "gt",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "soja"
+      }
+    },
+    "r19b":{
+      "given":{
+        "capacidad de inversion":"alta",
+        "mes": 4,
+        "sustentabilidad requerida": "baja",
+        "tipo de explotacion": "mix"
+      },
+      "ops":{
+        "capacidad de inversion": "eq",
+        "mes": "gt",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "soja"
+      }
+    },
+    "r20":{
+      "given":{
+        "capacidad de inversion":"alta",
+        "mes": 4,
+        "sustentabilidad requerida": "alta",
+        "resiliencia buscada": "baja"
+      },
+      "ops":{
+        "capacidad de inversion": "eq",
+        "mes": "gt",
+        "sustentabilidad requerida": "eq",
+        "resiliencia buscada": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "maiz"
+      }
+    },
+    "r21":{
+      "given":{
+        "capacidad de inversion":"alta",
+        "mes": 4,
+        "tipo de explotacion": "ganadera",
+        "resiliencia buscada": "baja"
+      },
+      "ops":{
+        "capacidad de inversion": "eq",
+        "mes": "gt",
+        "tipo de explotacion": "eq",
+        "resiliencia buscada": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "maiz"
+      }
+    },
+    "r22":{
+      "given":{
+        "capacidad de inversion":"alta",
+        "mes": 4,
+        "resiliencia buscada": "media",
+        "tipo de explotacion": "ganadera"
+      },
+      "ops":{
+        "capacidad de inversion": "eq",
+        "mes": "gt",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "sorgo"
+      }
+    },
+    "r23a":{
+      "given":{
+        "capacidad de inversion":"alta",
+        "mes": 4,
+        "sustentabilidad requerida": "media",
+        "tipo de explotacion": "agricola"
+      },
+      "ops":{
+        "capacidad de inversion": "eq",
+        "mes": "gt",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "girasol"
+      }
+    },
+    "r23b":{
+      "given":{
+        "capacidad de inversion":"alta",
+        "mes": 4,
+        "sustentabilidad requerida": "media",
+        "tipo de explotacion": "mixta"
+      },
+      "ops":{
+        "capacidad de inversion": "eq",
+        "mes": "gt",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "girasol"
+      }
+    },
+    "r24":{
+      "given":{
+        "capacidad de inversion":"alta",
+        "mes": 4,
+        "sustentabilidad requerida": "alta",
+        "resiliencia buscada": "media"
+      },
+      "ops":{
+        "capacidad de inversion": "eq",
+        "mes": "gt",
+        "sustentabilidad requerida": "eq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "sorgo"
+      }
+    },
+  }
+}
