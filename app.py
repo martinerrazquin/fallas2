@@ -7,7 +7,6 @@ from os.path import join, dirname, realpath
 app = Flask(__name__)
 cors = CORS(app, resources={r'/*': {'origins': '*'}})
 
-
 def present_next_var():
     nv = eng.get_next_var()
     pv = possible_values[nv]
