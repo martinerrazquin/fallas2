@@ -159,7 +159,7 @@
         "regimen de lluvia":"medio"
       },
       "ops":{
-        "regimen de lluvia": "eq",
+        "regimen de lluvia": "eq"
       },
       "then":{
         "resiliencia buscada": "media"
@@ -226,11 +226,11 @@
     "r11":{
       "given":{
         "capacidad de inversion":"baja",
-        "mes": 4,
+        "mes": 4
       },
       "ops":{
         "capacidad de inversion":"eq",
-        "mes": "gt",
+        "mes": "gt"
       },
       "then":{
         "tipo de cultivo": "sorgo"
@@ -524,13 +524,13 @@
         "capacidad de inversion": "media",
         "mes": 4,
         "tipo de explotacion": "mixta",
-        "sustentabilidad requerida": "baja",
+        "sustentabilidad requerida": "baja"
       },
       "ops":{
         "capacidad de inversion": "eq",
         "mes": "gt",
         "tipo de explotacion": "eq",
-        "sustentabilidad requerida": "eq",
+        "sustentabilidad requerida": "eq"
       },
       "then":{
         "tipo de cultivo": "girasol"
@@ -541,13 +541,13 @@
         "capacidad de inversion": "media",
         "mes": 4,
         "tipo de explotacion": "mixta",
-        "sustentabilidad requerida": "media",
+        "sustentabilidad requerida": "media"
       },
       "ops":{
         "capacidad de inversion": "eq",
         "mes": "gt",
         "tipo de explotacion": "eq",
-        "sustentabilidad requerida": "eq",
+        "sustentabilidad requerida": "eq"
       },
       "then":{
         "tipo de cultivo": "girasol"
@@ -558,13 +558,13 @@
         "capacidad de inversion": "media",
         "mes": 4,
         "tipo de explotacion": "mixta",
-        "resiliencia buscada": "media",
+        "resiliencia buscada": "media"
       },
       "ops":{
         "capacidad de inversion": "eq",
         "mes": "gt",
         "tipo de explotacion": "eq",
-        "resiliencia buscada": "eq",
+        "resiliencia buscada": "eq"
       },
       "then":{
         "tipo de cultivo": "girasol"
@@ -575,13 +575,13 @@
         "capacidad de inversion": "media",
         "mes": 4,
         "tipo de explotacion": "mixta",
-        "resiliencia buscada": "alta",
+        "resiliencia buscada": "alta"
       },
       "ops":{
         "capacidad de inversion": "eq",
         "mes": "gt",
         "tipo de explotacion": "eq",
-        "resiliencia buscada": "eq",
+        "resiliencia buscada": "eq"
       },
       "then":{
         "tipo de cultivo": "girasol"
@@ -722,6 +722,10 @@
       "then":{
         "tipo de cultivo": "sorgo"
       }
-    },
-  }
+    }
+  },
+  "questions" : {"mes": "preg1", "inv": "preg2", "lluvia": "preg3"},
+  "possible_values" : {"mes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+                       "inv": ["bajo", "medio", "alto"],
+                       "lluvia": [1, 2, 3]}
 }

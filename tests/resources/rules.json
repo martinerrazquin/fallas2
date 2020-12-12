@@ -1,10 +1,21 @@
-{"base_vars": ["a","b","c"],
-  "target_vars": ["x"],
+{
+  "base_vars": [
+    "a",
+    "b",
+    "c"
+  ],
+  "target_vars": [
+    "x"
+  ],
   "rules": {
     "rule1": {
       "given": {
         "b": 2,
         "c": 3
+      },
+      "ops": {
+        "b": "eq",
+        "c": "eq"
       },
       "then": {
         "y": 4
@@ -14,6 +25,10 @@
       "given": {
         "y": 4,
         "a": 1
+      },
+      "ops": {
+        "y": "eq",
+        "a": "eq"
       },
       "then": {
         "x": "hola"
@@ -25,6 +40,11 @@
         "b": -1,
         "c": -1
       },
+      "ops": {
+        "b": "eq",
+        "c": "eq",
+        "a": "eq"
+      },
       "then": {
         "y": -1
       }
@@ -32,6 +52,9 @@
     "rule4": {
       "given": {
         "y": -1
+      },
+      "ops": {
+        "y": "eq"
       },
       "then": {
         "x": "chau"

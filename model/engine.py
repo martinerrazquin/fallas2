@@ -10,11 +10,11 @@ class Engine:
         self.base_vars = set(base_vars)
         self.model = {}
 
-    def add_rule(self, p_dict, q_dict,ops):
+    def add_rule(self, p_dict, q_dict, ops={}):
         # TODO: agregar un Dict: var_name -> Set() de posibles valores para cada mapeo?
-        #contradictions = any(filter(lambda rule: (rule.p.to_dict() == p_dict) and (rule.q != q_dict), self.applicable_rules))
-        #if contradictions:
-        #    raise ValueError("Contradicting rules provided")
+        # contradictions = any(filter(lambda rule: (rule.p.to_dict() == p_dict) and (rule.q != q_dict), self.applicable_rules))
+        # if contradictions:
+        #     raise ValueError("Contradicting rules provided")
 
         self.applicable_rules.append(mr.Rule(p_dict, q_dict, ops, self.model))
 

@@ -2,15 +2,18 @@ from flask import Flask
 from flask_cors import CORS, cross_origin
 
 import model.engine as me
-
+from model.rules_storage import read
+from os.path import join, dirname, realpath
 app = Flask(__name__)
 cors = CORS(app, resources={r'/*': {'origins': '*'}})
+
 
 def present_next_var():
     nv = eng.get_next_var()
     pv = possible_values[nv]
     q = questions[nv]
-    return {'name':nv,'question':q,'possible values':pv}
+    return {'name': nv, 'question': q, 'possible values': pv}
+
 
 @app.route('/')
 def hello():
@@ -48,21 +51,29 @@ def _setup():
     # FIXME: hardcoded, parse the real stuff from json/yaml
     base_vars = ['mes', 'inv', 'lluvia']
     target_var = 'x'
-    parsed_rules = [({'mes': 4, 'inv': "alto"}, {'x': "soja"},{'mes': "gt", 'inv': "eq"}),
-                    ({'mes': 4, 'lluvia': 3}, {'rb': 'si'},{'mes': "gt", 'lluvia': "leq"}),
-                    ({'mes': 4}, {'rb': 'si'},{'mes': "leq"}),
-                    ({'rb': "si",'inv':"bajo"}, {'x': "pasto"},{'rb': "eq",'inv':"eq"})]
-    questions = {'mes':'preg1','inv':'preg2','lluvia':'preg3'}
-    possible_values = {'mes':[1,2,3,4,5,6,7,8,9,10,11,12],
-                        'inv':['bajo','medio','alto'],
-                        'lluvia':[1,2,3]}
+    parsed_rules = [({'mes': 4, 'inv': "alto"}, {'x': "soja"}, {'mes': "gt", 'inv': "eq"}),
+                    ({'mes': 4, 'lluvia': 3}, {'rb': 'si'}, {'mes': "gt", 'lluvia': "leq"}),
+                    ({'mes': 4}, {'rb': 'si'}, {'mes': "leq"}),
+                    ({'rb': "si", 'inv': "bajo"}, {'x': "pasto"}, {'rb': "eq", 'inv': "eq"})]
+    questions = {'mes': 'preg1', 'inv': 'preg2', 'lluvia': 'preg3'}
+    possible_values = {'mes': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+                       'inv': ['bajo', 'medio', 'alto'],
+                       'lluvia': [1, 2, 3]}
     # init engine
+
+    rules = read(join(dirname(realpath(__file__)), "./resources/rules_posta.json"))
+
+    base_vars = rules["base_vars"]
+    target_var = rules["target_var"]
+    parsed_rules = rules["rules"]
+    questions = rules["questions"]
+    possible_values = rules["possible_values"]
     eng = me.Engine(base_vars, target_var)
     for p, q, ops in parsed_rules:
         eng.add_rule(p, q, ops)
-    return eng,questions,possible_values
+    return eng, questions, possible_values
 
 
 if __name__ == '__main__':
-    eng,questions,possible_values = _setup()
+    eng, questions, possible_values = _setup()
     app.run(debug=True, port=5000)

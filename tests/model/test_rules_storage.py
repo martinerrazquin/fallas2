@@ -9,6 +9,10 @@ class ReadingRulesTest(unittest.TestCase):
                 "b": 2,
                 "c": 3
             },
+            "ops": {
+                "b": "eq",
+                "c": "eq"
+            },
             "then": {
                 "y": 4
             }
@@ -17,6 +21,10 @@ class ReadingRulesTest(unittest.TestCase):
             "given": {
                 "y": 4,
                 "a": 1
+            },
+            "ops": {
+                "y": "eq",
+                "a": "eq"
             },
             "then": {
                 "x": "hola"
@@ -28,6 +36,11 @@ class ReadingRulesTest(unittest.TestCase):
                 "b": -1,
                 "c": -1
             },
+            "ops": {
+                "b": "eq",
+                "c": "eq",
+                "a": "eq"
+            },
             "then": {
                 "y": -1
             }
@@ -36,11 +49,19 @@ class ReadingRulesTest(unittest.TestCase):
             "given": {
                 "y": -1
             },
+            "ops": {
+                "y": "eq"
+            },
             "then": {
                 "x": "chau"
             }
         }
     }
+
+    expected_rules = [({"b": 2, "c": 3}, {"y": 4}, {"b": "eq", "c": "eq"}),
+                      ({"y": 4, "a": 1}, {"x": "hola"}, {"y": "eq", "a": "eq"}),
+                      ({"a": -1, "b": -1, "c": -1}, {"y": -1}, {"b": "eq", "c": "eq", "a": "eq"}),
+                      ({"y": -1}, {"x": "chau"}, {"y": "eq"})]
 
     def test_readEmptyFile_thenReturnEmptySet(self):
         rules = read("../resources/empty_rules.json")
