@@ -48,6 +48,7 @@ class Engine:
         # solo considero aquellas reglas que se completan con variables base
         weighted_list = [(rule, rule.lacking()) for rule in self.applicable_rules
                          if rule.lacking() <= self.base_vars]
+        print(weighted_list)
         if len(weighted_list) == 0:
             return None  # raise ValueError("Model can't be further extended")
         winning_rule, lacking_vars = sorted(weighted_list, key=lambda x: len(x[1]))[0]

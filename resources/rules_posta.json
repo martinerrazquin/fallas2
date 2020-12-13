@@ -10,7 +10,7 @@
         "sustentabilidad deseada": "eq"
       },
       "then":{
-        "sustentabilidad requerida": "alta"
+        "sustentabilidad requerida": 3
       }
     },
     "r2":{
@@ -21,7 +21,7 @@
         "sustentabilidad deseada": "eq"
       },
       "then":{
-        "sustentabilidad requerida": "baja"
+        "sustentabilidad requerida": 1
       }
     },
     "r3a":{
@@ -34,7 +34,7 @@
         "ultimo cultivo": "eq"
       },
       "then":{
-        "sustentabilidad requerida": "alta"
+        "sustentabilidad requerida": 3
       }
     },
     "r3b":{
@@ -47,7 +47,7 @@
         "ultimo cultivo": "eq"
       },
       "then":{
-        "sustentabilidad requerida": "alta"
+        "sustentabilidad requerida": 3
       }
     },
     "r4a":{
@@ -60,7 +60,7 @@
         "ultimo cultivo": "eq"
       },
       "then":{
-        "sustentabilidad requerida": "baja"
+        "sustentabilidad requerida": 1
       }
     },
     "r4b":{
@@ -73,7 +73,7 @@
         "ultimo cultivo": "eq"
       },
       "then":{
-        "sustentabilidad requerida": "baja"
+        "sustentabilidad requerida": 1
       }
     },
     "r4c":{
@@ -86,7 +86,7 @@
         "ultimo cultivo": "eq"
       },
       "then":{
-        "sustentabilidad requerida": "baja"
+        "sustentabilidad requerida": 1
       }
     },
     "r5a":{
@@ -99,7 +99,7 @@
         "ultimo cultivo": "eq"
       },
       "then":{
-        "sustentabilidad requerida": "media"
+        "sustentabilidad requerida": 2
       }
     },
     "r5b":{
@@ -112,7 +112,7 @@
         "ultimo cultivo": "eq"
       },
       "then":{
-        "sustentabilidad requerida": "media"
+        "sustentabilidad requerida": 2
       }
     },
     "r6":{
@@ -125,7 +125,7 @@
         "mes": "leq"
       },
       "then":{
-        "resiliencia buscada": "alta"
+        "resiliencia buscada": 3
       }
     },
     "r7a":{
@@ -138,7 +138,7 @@
         "mes": "gt"
       },
       "then":{
-        "resiliencia buscada": "media"
+        "resiliencia buscada": 2
       }
     },
     "r7b":{
@@ -151,7 +151,7 @@
         "mes": "leq"
       },
       "then":{
-        "resiliencia buscada": "media"
+        "resiliencia buscada": 2
       }
     },
     "r7c":{
@@ -162,7 +162,7 @@
         "regimen de lluvia": "eq"
       },
       "then":{
-        "resiliencia buscada": "media"
+        "resiliencia buscada": 2
       }
     },
     "r8":{
@@ -175,19 +175,19 @@
         "mes": "gt"
       },
       "then":{
-        "resiliencia buscada": "baja"
+        "resiliencia buscada": 1
       }
     },
     "r9a":{
       "given":{
-        "capacidad de inversion":"baja",
+        "capacidad de inversion": 1,
         "mes": 4,
-        "resiliencia buscada": "baja"
+        "resiliencia buscada": 1
       },
       "ops":{
-        "capacidad de inversion":"eq",
+        "capacidad de inversion": "geq",
         "mes": "leq",
-        "resiliencia buscada": "eq"
+        "resiliencia buscada": "leq"
       },
       "then":{
         "tipo de cultivo": "avena"
@@ -195,14 +195,14 @@
     },
     "r9b":{
       "given":{
-        "capacidad de inversion":"baja",
+        "capacidad de inversion": 1,
         "mes": 4,
-        "resiliencia buscada": "media"
+        "resiliencia buscada": 2
       },
       "ops":{
-        "capacidad de inversion":"eq",
+        "capacidad de inversion": "geq",
         "mes": "leq",
-        "resiliencia buscada": "eq"
+        "resiliencia buscada": "leq"
       },
       "then":{
         "tipo de cultivo": "avena"
@@ -210,14 +210,14 @@
     },
     "r10":{
       "given":{
-        "capacidad de inversion":"baja",
+        "capacidad de inversion": 1,
         "mes": 4,
-        "resiliencia buscada": "alta"
+        "resiliencia buscada": 3
       },
       "ops":{
-        "capacidad de inversion":"eq",
+        "capacidad de inversion": "geq",
         "mes": "leq",
-        "resiliencia buscada": "eq"
+        "resiliencia buscada": "leq"
       },
       "then":{
         "tipo de cultivo": "cebada"
@@ -225,11 +225,11 @@
     },
     "r11":{
       "given":{
-        "capacidad de inversion":"baja",
+        "capacidad de inversion": 1,
         "mes": 4
       },
       "ops":{
-        "capacidad de inversion":"eq",
+        "capacidad de inversion": "eq",
         "mes": "gt"
       },
       "then":{
@@ -239,14 +239,14 @@
     "r12aaa":{
       "given":{
         "mes": 4,
-        "capacidad de inversion": "media",
-        "sustentabilidad requerida": "media",
+        "capacidad de inversion": 2,
+        "sustentabilidad requerida": 2,
         "tipo de explotacion": "agricola"
       },
       "ops":{
         "mes": "leq",
-        "capacidad de inversion": "eq",
-        "sustentabilidad requerida": "eq",
+        "capacidad de inversion": "geq",
+        "sustentabilidad requerida": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -256,14 +256,14 @@
     "r12baa":{
       "given":{
         "mes": 4,
-        "capacidad de inversion": "alta",
-        "sustentabilidad requerida": "media",
+        "capacidad de inversion": 3,
+        "sustentabilidad requerida": 2,
         "tipo de explotacion": "agricola"
       },
       "ops":{
         "mes": "leq",
-        "capacidad de inversion": "eq",
-        "sustentabilidad requerida": "eq",
+        "capacidad de inversion": "geq",
+        "sustentabilidad requerida": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -273,14 +273,14 @@
     "r12aba":{
       "given":{
         "mes": 4,
-        "capacidad de inversion": "media",
-        "sustentabilidad requerida": "alta",
+        "capacidad de inversion": 2,
+        "sustentabilidad requerida": 3,
         "tipo de explotacion": "agricola"
       },
       "ops":{
         "mes": "leq",
-        "capacidad de inversion": "eq",
-        "sustentabilidad requerida": "eq",
+        "capacidad de inversion": "geq",
+        "sustentabilidad requerida": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -290,14 +290,14 @@
     "r12aab":{
       "given":{
         "mes": 4,
-        "capacidad de inversion": "media",
-        "sustentabilidad requerida": "media",
+        "capacidad de inversion": 2,
+        "sustentabilidad requerida": 2,
         "tipo de explotacion": "mixta"
       },
       "ops":{
         "mes": "leq",
-        "capacidad de inversion": "eq",
-        "sustentabilidad requerida": "eq",
+        "capacidad de inversion": "geq",
+        "sustentabilidad requerida": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -307,14 +307,14 @@
     "r12bba":{
       "given":{
         "mes": 4,
-        "capacidad de inversion": "alta",
-        "sustentabilidad requerida": "alta",
+        "capacidad de inversion": 3,
+        "sustentabilidad requerida": 3,
         "tipo de explotacion": "agricola"
       },
       "ops":{
         "mes": "leq",
-        "capacidad de inversion": "eq",
-        "sustentabilidad requerida": "eq",
+        "capacidad de inversion": "geq",
+        "sustentabilidad requerida": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -324,14 +324,14 @@
     "r12abb":{
       "given":{
         "mes": 4,
-        "capacidad de inversion": "media",
-        "sustentabilidad requerida": "alta",
+        "capacidad de inversion": 2,
+        "sustentabilidad requerida": 3,
         "tipo de explotacion": "mixta"
       },
       "ops":{
         "mes": "leq",
-        "capacidad de inversion": "eq",
-        "sustentabilidad requerida": "eq",
+        "capacidad de inversion": "geq",
+        "sustentabilidad requerida": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -341,14 +341,14 @@
     "r12bab":{
       "given":{
         "mes": 4,
-        "capacidad de inversion": "alta",
-        "sustentabilidad requerida": "media",
+        "capacidad de inversion": 3,
+        "sustentabilidad requerida": 2,
         "tipo de explotacion": "mixta"
       },
       "ops":{
         "mes": "leq",
-        "capacidad de inversion": "eq",
-        "sustentabilidad requerida": "eq",
+        "capacidad de inversion": "geq",
+        "sustentabilidad requerida": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -358,14 +358,14 @@
     "r12bbb":{
       "given":{
         "mes": 4,
-        "capacidad de inversion": "alta",
-        "sustentabilidad requerida": "alta",
+        "capacidad de inversion": 3,
+        "sustentabilidad requerida": 3,
         "tipo de explotacion": "mixta"
       },
       "ops":{
         "mes": "leq",
-        "capacidad de inversion": "eq",
-        "sustentabilidad requerida": "eq",
+        "capacidad de inversion": "geq",
+        "sustentabilidad requerida": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -375,12 +375,12 @@
     "r13a":{
       "given":{
         "mes": 4,
-        "capacidad de inversion": "media",
+        "capacidad de inversion": 2,
         "tipo de explotacion": "ganadera"
       },
       "ops":{
         "mes": "leq",
-        "capacidad de inversion": "eq",
+        "capacidad de inversion": "geq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -390,12 +390,12 @@
     "r13b":{
       "given":{
         "mes": 4,
-        "capacidad de inversion": "alta",
+        "capacidad de inversion": 3,
         "tipo de explotacion": "ganadera"
       },
       "ops":{
         "mes": "leq",
-        "capacidad de inversion": "eq",
+        "capacidad de inversion": "geq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -405,14 +405,14 @@
     "r14aa":{
       "given":{
         "mes": 4,
-        "capacidad de inversion": "media",
-        "sustentabilidad requerida": "baja",
+        "capacidad de inversion": 2,
+        "sustentabilidad requerida": 1,
         "tipo de explotacion": "agricola"
       },
       "ops":{
         "mes": "leq",
-        "capacidad de inversion": "eq",
-        "sustentabilidad requerida": "eq",
+        "capacidad de inversion": "geq",
+        "sustentabilidad requerida": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -422,14 +422,14 @@
     "r14ab":{
       "given":{
         "mes": 4,
-        "capacidad de inversion": "media",
-        "sustentabilidad requerida": "baja",
+        "capacidad de inversion": 2,
+        "sustentabilidad requerida": 1,
         "tipo de explotacion": "mixta"
       },
       "ops":{
         "mes": "leq",
-        "capacidad de inversion": "eq",
-        "sustentabilidad requerida": "eq",
+        "capacidad de inversion": "geq",
+        "sustentabilidad requerida": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -439,14 +439,14 @@
     "r14ba":{
       "given":{
         "mes": 4,
-        "capacidad de inversion": "alta",
-        "sustentabilidad requerida": "baja",
+        "capacidad de inversion": 3,
+        "sustentabilidad requerida": 1,
         "tipo de explotacion": "agricola"
       },
       "ops":{
         "mes": "leq",
-        "capacidad de inversion": "eq",
-        "sustentabilidad requerida": "eq",
+        "capacidad de inversion": "geq",
+        "sustentabilidad requerida": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -456,14 +456,14 @@
     "r14bb":{
       "given":{
         "mes": 4,
-        "capacidad de inversion": "alta",
-        "sustentabilidad requerida": "baja",
+        "capacidad de inversion": 3,
+        "sustentabilidad requerida": 1,
         "tipo de explotacion": "mixta"
       },
       "ops":{
         "mes": "leq",
-        "capacidad de inversion": "eq",
-        "sustentabilidad requerida": "eq",
+        "capacidad de inversion": "geq",
+        "sustentabilidad requerida": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -472,12 +472,12 @@
     },
     "r15":{
       "given":{
-        "capacidad de inversion": "media",
+        "capacidad de inversion": 2,
         "mes": 4,
         "tipo de explotacion": "ganadera"
       },
       "ops":{
-        "capacidad de inversion": "eq",
+        "capacidad de inversion": "geq",
         "mes": "gt",
         "tipo de explotacion": "eq"
       },
@@ -487,7 +487,7 @@
     },
     "r16":{
       "given":{
-        "capacidad de inversion": "media",
+        "capacidad de inversion": 2,
         "mes": 4,
         "tipo de explotacion": "agricola"
       },
@@ -502,18 +502,18 @@
     },
     "r17":{
       "given":{
-        "capacidad de inversion": "media",
+        "capacidad de inversion": 2,
         "mes": 4,
         "tipo de explotacion": "mixta",
-        "sustentabilidad requerida": "alta",
-        "resiliencia buscada": "baja"
+        "sustentabilidad requerida": 3,
+        "resiliencia buscada": 1
       },
       "ops":{
-        "capacidad de inversion": "eq",
+        "capacidad de inversion": "geq",
         "mes": "gt",
         "tipo de explotacion": "eq",
-        "sustentabilidad requerida": "eq",
-        "resiliencia buscada": "eq"
+        "sustentabilidad requerida": "leq",
+        "resiliencia buscada": "leq"
       },
       "then":{
         "tipo de cultivo": "sorgo"
@@ -521,16 +521,16 @@
     },
     "r18aa":{
       "given":{
-        "capacidad de inversion": "media",
+        "capacidad de inversion": 2,
         "mes": 4,
         "tipo de explotacion": "mixta",
-        "sustentabilidad requerida": "baja"
+        "sustentabilidad requerida": 1
       },
       "ops":{
         "capacidad de inversion": "eq",
         "mes": "gt",
         "tipo de explotacion": "eq",
-        "sustentabilidad requerida": "eq"
+        "sustentabilidad requerida": "leq"
       },
       "then":{
         "tipo de cultivo": "girasol"
@@ -538,16 +538,16 @@
     },
     "r18ba":{
       "given":{
-        "capacidad de inversion": "media",
+        "capacidad de inversion": 2,
         "mes": 4,
         "tipo de explotacion": "mixta",
-        "sustentabilidad requerida": "media"
+        "sustentabilidad requerida": 2
       },
       "ops":{
         "capacidad de inversion": "eq",
         "mes": "gt",
         "tipo de explotacion": "eq",
-        "sustentabilidad requerida": "eq"
+        "sustentabilidad requerida": "leq"
       },
       "then":{
         "tipo de cultivo": "girasol"
@@ -555,16 +555,16 @@
     },
     "r18ab":{
       "given":{
-        "capacidad de inversion": "media",
+        "capacidad de inversion": 2,
         "mes": 4,
         "tipo de explotacion": "mixta",
-        "resiliencia buscada": "media"
+        "resiliencia buscada": 2
       },
       "ops":{
         "capacidad de inversion": "eq",
         "mes": "gt",
         "tipo de explotacion": "eq",
-        "resiliencia buscada": "eq"
+        "resiliencia buscada": "leq"
       },
       "then":{
         "tipo de cultivo": "girasol"
@@ -572,16 +572,16 @@
     },
     "r18ab":{
       "given":{
-        "capacidad de inversion": "media",
+        "capacidad de inversion": 2,
         "mes": 4,
         "tipo de explotacion": "mixta",
-        "resiliencia buscada": "alta"
+        "resiliencia buscada": 3
       },
       "ops":{
         "capacidad de inversion": "eq",
         "mes": "gt",
         "tipo de explotacion": "eq",
-        "resiliencia buscada": "eq"
+        "resiliencia buscada": "leq"
       },
       "then":{
         "tipo de cultivo": "girasol"
@@ -589,15 +589,15 @@
     },
     "r19a":{
       "given":{
-        "capacidad de inversion":"alta",
+        "capacidad de inversion": 3,
         "mes": 4,
-        "sustentabilidad requerida": "baja",
+        "sustentabilidad requerida": 1,
         "tipo de explotacion": "agricola"
       },
       "ops":{
-        "capacidad de inversion": "eq",
+        "capacidad de inversion": "geq",
         "mes": "gt",
-        "sustentabilidad requerida": "eq",
+        "sustentabilidad requerida": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -606,15 +606,15 @@
     },
     "r19b":{
       "given":{
-        "capacidad de inversion":"alta",
+        "capacidad de inversion": 3,
         "mes": 4,
-        "sustentabilidad requerida": "baja",
-        "tipo de explotacion": "mix"
+        "sustentabilidad requerida": 1,
+        "tipo de explotacion": "mixta"
       },
       "ops":{
-        "capacidad de inversion": "eq",
+        "capacidad de inversion": "geq",
         "mes": "gt",
-        "sustentabilidad requerida": "eq",
+        "sustentabilidad requerida": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -623,16 +623,16 @@
     },
     "r20":{
       "given":{
-        "capacidad de inversion":"alta",
+        "capacidad de inversion": 3,
         "mes": 4,
-        "sustentabilidad requerida": "alta",
-        "resiliencia buscada": "baja"
+        "sustentabilidad requerida": 3,
+        "resiliencia buscada": 1
       },
       "ops":{
-        "capacidad de inversion": "eq",
+        "capacidad de inversion": "geq",
         "mes": "gt",
-        "sustentabilidad requerida": "eq",
-        "resiliencia buscada": "eq"
+        "sustentabilidad requerida": "leq",
+        "resiliencia buscada": "leq"
       },
       "then":{
         "tipo de cultivo": "maiz"
@@ -640,16 +640,16 @@
     },
     "r21":{
       "given":{
-        "capacidad de inversion":"alta",
+        "capacidad de inversion": 3,
         "mes": 4,
         "tipo de explotacion": "ganadera",
-        "resiliencia buscada": "baja"
+        "resiliencia buscada": 1
       },
       "ops":{
-        "capacidad de inversion": "eq",
+        "capacidad de inversion": "geq",
         "mes": "gt",
         "tipo de explotacion": "eq",
-        "resiliencia buscada": "eq"
+        "resiliencia buscada": "leq"
       },
       "then":{
         "tipo de cultivo": "maiz"
@@ -657,15 +657,15 @@
     },
     "r22":{
       "given":{
-        "capacidad de inversion":"alta",
+        "capacidad de inversion": 3,
         "mes": 4,
-        "resiliencia buscada": "media",
+        "resiliencia buscada": 2,
         "tipo de explotacion": "ganadera"
       },
       "ops":{
-        "capacidad de inversion": "eq",
+        "capacidad de inversion": "geq",
         "mes": "gt",
-        "sustentabilidad requerida": "eq",
+        "resiliencia buscada": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -674,15 +674,15 @@
     },
     "r23a":{
       "given":{
-        "capacidad de inversion":"alta",
+        "capacidad de inversion": 3,
         "mes": 4,
-        "sustentabilidad requerida": "media",
+        "sustentabilidad requerida": 2,
         "tipo de explotacion": "agricola"
       },
       "ops":{
-        "capacidad de inversion": "eq",
+        "capacidad de inversion": "geq",
         "mes": "gt",
-        "sustentabilidad requerida": "eq",
+        "sustentabilidad requerida": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -691,32 +691,53 @@
     },
     "r23b":{
       "given":{
-        "capacidad de inversion":"alta",
+        "capacidad de inversion": 3,
         "mes": 4,
-        "sustentabilidad requerida": "media",
+        "sustentabilidad requerida": 2,
         "tipo de explotacion": "mixta"
       },
       "ops":{
-        "capacidad de inversion": "eq",
+        "capacidad de inversion": "geq",
         "mes": "gt",
-        "sustentabilidad requerida": "eq",
+        "sustentabilidad requerida": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
         "tipo de cultivo": "girasol"
       }
     },
-    "r24":{
+    "r24a":{
       "given":{
-        "capacidad de inversion":"alta",
+        "capacidad de inversion": 3,
         "mes": 4,
-        "sustentabilidad requerida": "alta",
-        "resiliencia buscada": "media"
+        "sustentabilidad requerida": 3,
+        "resiliencia buscada": 2,
+        "tipo de explotacion": "mixta"
       },
       "ops":{
-        "capacidad de inversion": "eq",
+        "capacidad de inversion": "geq",
         "mes": "gt",
-        "sustentabilidad requerida": "eq",
+        "sustentabilidad requerida": "leq",
+        "resiliencia buscada": "leq",
+        "tipo de explotacion": "eq"
+      },
+      "then":{
+        "tipo de cultivo": "sorgo"
+      }
+    },
+    "r24b":{
+      "given":{
+        "capacidad de inversion": 3,
+        "mes": 4,
+        "sustentabilidad requerida": 3,
+        "resiliencia buscada": 2,
+        "tipo de explotacion": "ganadera"
+      },
+      "ops":{
+        "capacidad de inversion": "geq",
+        "mes": "gt",
+        "sustentabilidad requerida": "leq",
+        "resiliencia buscada": "leq",
         "tipo de explotacion": "eq"
       },
       "then":{
@@ -724,8 +745,20 @@
       }
     }
   },
-  "questions" : {"mes": "preg1", "inv": "preg2", "lluvia": "preg3"},
-  "possible_values" : {"mes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-                       "inv": ["bajo", "medio", "alto"],
-                       "lluvia": [1, 2, 3]}
+  "questions" : {
+		"mes": "¿en qué mes del año se planea sembrar?[1-12]",
+		"sustentabilidad deseada": "¿qué tan alta es la relevancia de la sustentabilidad de su lote?[baja-media-alta]",
+		"ultimo cultivo": "¿cual fue el ultimo cultivo realizado en el lote?[soja, girasol,trigo, sorgo, maiz,avena, cebada]",
+		"regimen de lluvia": "¿qué tan fuerte es el régimen de lluvia?[bajo-medio-alto]",
+		"capacidad de inversion": "¿qué tan alta es su capacidad de inversión?[1-3]",
+		"tipo de explotacion": "¿qué tipo de explotación realiza?[agricola, ganadera, mixta]"
+	},
+  "possible_values" : {
+		"mes": [1,2,3,4,5,6,7,8,9,10,11,12],
+		"sustentabilidad deseada": ["baja","media","alta"],
+		"ultimo cultivo": ["soja", "girasol","trigo", "sorgo", "maiz","avena", "cebada"],
+		"regimen de lluvia": ["bajo","medio","alto"],
+		"capacidad de inversion": [1,2,3],
+		"tipo de explotacion": ["agricola", "ganadera", "mixta"]
+	}
 }

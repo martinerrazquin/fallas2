@@ -9,6 +9,8 @@ cors = CORS(app, resources={r'/*': {'origins': '*'}})
 
 def present_next_var():
     nv = eng.get_next_var()
+    if nv is None:
+        return None
     pv = possible_values[nv]
     q = questions[nv]
     return {'name': nv, 'question': q, 'possible values': pv}
@@ -33,7 +35,9 @@ def data(var, value):
         value = int(value)
     except ValueError:
         pass
-    return {'convergence': eng.step(var, value), 'next_var': present_next_var()}
+    if (conv := eng.step(var, value)):
+        return {'convergence': conv, 'next_var': None}
+    return {'convergence': conv, 'next_var': present_next_var()}
 
 
 @app.route('/recommend', methods=['GET'])
