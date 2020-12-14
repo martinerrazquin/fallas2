@@ -14,7 +14,7 @@ def __dict2list(rules_dict):
 
 
 def read(path):
-    with open(path) as json_rules:
+    with open(path, encoding='utf-8') as json_rules:
         try:
             return __dict2list(json.load(json_rules))
         except:
