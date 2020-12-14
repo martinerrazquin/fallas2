@@ -76,7 +76,7 @@ def _setup():
         eng.add_rule(p, q, ops)
     return eng, questions, possible_values
 
-
+eng, questions, possible_values = _setup()
 if __name__ == '__main__':
-    eng, questions, possible_values = _setup()
+
     app.run(debug=True, port=5000)
