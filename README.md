@@ -1,16 +1,6 @@
 # TP Fallas 2
 Sistema experto para selección de cultivos, con motor de inferencia propio
 
-## *TODO*
-
-* pruebas sobre el motor (revisar que ande bien): sobre esto solo hay un poco de
-codigo en engine.py
-* agregar un parser de json/yaml para levantar los valores posibles, preguntas, reglas, etc.
-* agregar resources para el server de Flask
-    * con un POST@/data, POST@/reset y GET@/recommend deberia estar bien
-* agregar un frontend para las preguntas y eso
-
-
 ## Backend
 Para actualizar las librerias:
 
